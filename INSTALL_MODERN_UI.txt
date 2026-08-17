@@ -1,0 +1,68 @@
+EDRIS MODERN LEARNING UI v1.3
+================================
+
+WHAT CHANGED
+------------
+This update redesigns the old lesson section that displayed a large clock / old-school layout.
+
+New design:
+- Real topic image thumbnail on every lesson card
+- Small 3–4 min reading-time chip instead of a huge clock graphic
+- Full lesson title — never intentionally truncated
+- Clear lesson number (01, 02, 03...)
+- Topic label + lesson status
+- Working Save button on each lesson card
+- Working Open Lesson action
+- Modern topic hero with image + EDRIS blue/navy overlay
+- Circular learning-progress indicator
+- Functional Continue Learning card
+- Responsive mobile, tablet and desktop layouts
+- Dark-mode styling retained
+- Existing Language / Text Size / Reset / Saved settings retained
+
+GITHUB UPDATE
+-------------
+1. Open PowerShell in:
+
+C:\Users\amzar\Downloads\edris-ui
+
+2. Pull the latest GitHub version FIRST:
+
+git pull origin main
+
+3. Keep your existing:
+.git
+.github
+
+4. Extract this ZIP and copy ALL contents into:
+C:\Users\amzar\Downloads\edris-ui
+
+Choose:
+Replace the files in the destination
+
+5. Run:
+
+git status
+git add -A
+git commit -m "Redesign EDRIS learning cards and topic UI"
+git push origin main
+
+6. Open GitHub → Actions.
+Wait for a GREEN checkmark.
+
+7. Refresh:
+Desktop: Ctrl + F5
+Mobile: close the page/PWA and reopen while online.
+
+TEST
+----
+Open Learn → choose a topic.
+
+Check that:
+- No giant clock appears
+- Full lesson title is visible
+- Lesson image appears only inside the card thumbnail
+- Bookmark button works
+- Clicking the main lesson card opens the lesson
+- Continue Learning button works
+- Language, text size and dark mode still work

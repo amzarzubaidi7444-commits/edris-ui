@@ -52,3 +52,11 @@ restore reading preferences and mobile installation guidance.
 
 Preferences persist using localStorage on the device.
 See `SETTINGS_GUIDE.md` for a step-by-step test guide.
+
+
+## Modern Learning UI v1.3
+
+The topic and lesson experience has been redesigned with image-led lesson cards,
+full visible titles, small reading-time chips, progress visualization, a functional
+Continue Learning panel, responsive mobile sizing and strict SVG icon bounds.
+The previous oversized clock-style lesson presentation is removed.
