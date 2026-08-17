@@ -69,3 +69,24 @@ Primary EDRIS colors:
 - Navy: `#262B6A`
 
 The prototype uses Oxygen for the Latin UI and can be extended with Noto Sans Arabic for Arabic content.
+
+
+## Publish on GitHub Pages
+
+This repository already includes `.github/workflows/pages.yml`.
+
+1. Create a new GitHub repository.
+2. Push this repository to GitHub using the `main` branch.
+3. Open **Settings → Pages**.
+4. Under **Build and deployment → Source**, choose **GitHub Actions**.
+5. Push to `main` or manually run the Pages workflow.
+6. GitHub will display the public site URL after the deployment succeeds.
+
+Example push commands:
+
+```bash
+git remote add origin https://github.com/YOUR-USERNAME/edris-ui.git
+git push -u origin main
+```
+
+> This prototype contains demo/sample patient information only. Do not publish real patient or clinical data in a public static site.
