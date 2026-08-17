@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#1469E2" />
+  <title>EDRIS — Glass UI Home</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-orb orb-3"></div>
+
+  <main class="shell">
+    <section class="frame">
+      <div class="statusbar" aria-hidden="true">
+        <span>9:41</span>
+        <div class="status-icons">
+          <span class="signal"><i></i><i></i><i></i></span>
+          <span>5G</span>
+          <span class="battery"></span>
+        </div>
+      </div>
+
+      <header class="topbar">
+        <div class="brand" aria-label="EDRIS">
+          <div class="brand-icon" aria-hidden="true"></div>
+          <span>EDRIS</span>
+        </div>
+        <button class="icon-btn tap" id="themeBtn" aria-label="Toggle theme">
+          <span>✦</span>
+          <span class="badge-dot"></span>
+        </button>
+      </header>
+
+      <section class="greeting">
+        <small>Monday, 17 August</small>
+        <h1>Assalamu'alaikum,<br>Ahmad</h1>
+      </section>
+
+      <section class="hero">
+        <div class="eyebrow">NEXT DIALYSIS</div>
+        <div class="day">Tomorrow</div>
+        <div class="time">08:30 AM</div>
+        <div class="hero-bottom">
+          <div class="clinic">
+            <span class="pin"></span>
+            <span>Kuala Lumpur Dialysis Centre</span>
+          </div>
+          <button class="hero-pill tap" onclick="showToast('Opening dialysis details')">View →</button>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-header">
+          <h2>Today's Health</h2>
+          <a href="#" class="link" onclick="event.preventDefault(); showToast('Opening monitoring overview')">See all</a>
+        </div>
+
+        <div class="grid">
+          <article class="card glass-soft tap" role="button" tabindex="0" aria-label="Blood pressure">
+            <div class="metric-label">♡ BLOOD PRESSURE</div>
+            <div class="metric-value">128 / 78</div>
+            <div class="metric-sub">mmHg</div>
+            <div class="metric-status"><i></i>Within target</div>
+          </article>
+
+          <article class="card glass-soft tap" role="button" tabindex="0" aria-label="Weight">
+            <div class="metric-label">⚖ WEIGHT</div>
+            <div class="metric-value">67.4</div>
+            <div class="metric-sub">kg · dry weight 66.8</div>
+            <div class="trend">+0.6 kg since last session</div>
+          </article>
+        </div>
+
+        <article class="fluid glass-soft">
+          <div class="fluid-top">
+            <div class="fluid-title">💧 FLUID TODAY</div>
+          </div>
+          <div class="fluid-main">
+            <strong><span id="fluidCurrent">850</span> ml</strong>
+            <span>1,200 ml</span>
+          </div>
+          <div class="progress"><div class="bar" id="fluidBar"></div></div>
+          <div class="fluid-bottom" style="margin-top:12px">
+            <span class="remaining" id="fluidLabel">350 ml remaining</span>
+            <button class="mini-btn tap" id="addFluid">+ Add</button>
+          </div>
+        </article>
+      </section>
+
+      <section class="quick-wrap">
+        <div class="section-header">
+          <h2>Quick Actions</h2>
+        </div>
+        <div class="quick-grid">
+          <button class="quick glass-soft tap" onclick="showToast('Vitals logging opened')">
+            <div class="icon">＋</div>
+            <span>Vitals</span>
+          </button>
+          <button class="quick glass-soft tap" onclick="document.getElementById('addFluid').click()">
+            <div class="icon">💧</div>
+            <span>Fluid</span>
+          </button>
+          <button class="quick glass-soft tap" onclick="showToast('Symptoms recording opened')">
+            <div class="icon">♡</div>
+            <span>Symptoms</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="iman glass">
+        <small>☾ &nbsp; A peaceful moment</small>
+        <h3>Morning Zikr</h3>
+        <p>Continue your daily remembrance in a private and calming space.</p>
+        <div class="arabic">سُبْحَانَ اللَّهِ</div>
+        <div class="iman-actions">
+          <span style="font-size:12px;color:#B9EFD7;font-weight:700">12 / 33</span>
+          <button class="mini-btn tap" onclick="showToast('Opening Morning Zikr')">Continue →</button>
+        </div>
+      </section>
+
+      <section class="education glass-soft tap" onclick="showToast('Opening health education article')">
+        <div class="edu-art">💧</div>
+        <div>
+          <small>FOR YOU</small>
+          <h3>Managing thirst between dialysis sessions</h3>
+          <p>4 min read</p>
+        </div>
+        <div class="arrow">→</div>
+      </section>
+    </section>
+  </main>
+
+  <nav class="bottom-nav" aria-label="Primary navigation">
+    <button class="nav-item active tap" data-label="Home"><span class="i">⌂</span><span>Home</span></button>
+    <button class="nav-item tap" data-label="Monitor"><span class="i">♡</span><span>Monitor</span></button>
+    <button class="nav-item tap" data-label="Learn"><span class="i">▤</span><span>Learn</span></button>
+    <button class="nav-item tap" data-label="Iman"><span class="i">☾</span><span>Iman</span></button>
+    <button class="nav-item tap" data-label="Me"><span class="i">◯</span><span>Me</span></button>
+  </nav>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
