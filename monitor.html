@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#1469E2" />
+  <title>EDRIS — Monitoring</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/monitor.css">
+</head>
+<body class="monitor-page">
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-orb orb-3"></div>
+
+  <main class="shell">
+    <section class="frame monitor-frame">
+      <div class="statusbar" aria-hidden="true">
+        <span>9:41</span>
+        <div class="status-icons">
+          <span class="signal"><i></i><i></i><i></i></span>
+          <span>5G</span>
+          <span class="battery"></span>
+        </div>
+      </div>
+
+      <header class="monitor-topbar">
+        <div class="brand" aria-label="EDRIS">
+          <div class="brand-icon" aria-hidden="true"></div>
+          <span>EDRIS</span>
+        </div>
+        <button class="monitor-icon-btn tap" id="addReadingTop" aria-label="Add health reading">＋</button>
+      </header>
+
+      <section class="monitor-title-row">
+        <div>
+          <div class="monitor-kicker">DAILY OVERVIEW</div>
+          <h1>Monitoring</h1>
+          <p>Last updated · 8:10 AM</p>
+        </div>
+        <div class="live-chip"><span></span> Synced</div>
+      </section>
+
+      <section class="status-hero glass">
+        <div class="status-glow"></div>
+        <div class="status-hero-head">
+          <div>
+            <div class="status-eyebrow">TODAY'S STATUS</div>
+            <div class="status-main"><span class="pulse-dot"></span> Stable</div>
+          </div>
+          <div class="health-ring" aria-label="4 of 5 health checks completed">
+            <svg viewBox="0 0 76 76" role="img" aria-hidden="true">
+              <circle class="ring-track" cx="38" cy="38" r="31"></circle>
+              <circle class="ring-progress" cx="38" cy="38" r="31"></circle>
+            </svg>
+            <div><strong>4</strong><span>/5</span></div>
+          </div>
+        </div>
+        <div class="status-copy">Most of your daily checks are complete.</div>
+        <div class="status-progress">
+          <span></span>
+        </div>
+        <div class="status-foot">
+          <span>1 check remaining</span>
+          <button class="glass-pill tap" id="completeCheckBtn">Complete →</button>
+        </div>
+      </section>
+
+      <section class="section-block">
+        <div class="section-header monitor-section-header">
+          <h2>Health Trends</h2>
+          <div class="range-tabs" aria-label="Chart date range">
+            <button class="range-tab active" data-range="7D">7D</button>
+            <button class="range-tab" data-range="30D">30D</button>
+            <button class="range-tab" data-range="3M">3M</button>
+          </div>
+        </div>
+
+        <article class="trend-card glass-soft">
+          <div class="trend-card-head">
+            <div>
+              <div class="trend-label">♡ BLOOD PRESSURE</div>
+              <div class="trend-reading">
+                <strong id="bpValue">128 / 78</strong>
+                <span>mmHg</span>
+              </div>
+            </div>
+            <div class="target-chip"><span></span> Within target</div>
+          </div>
+
+          <div class="chart-wrap">
+            <div class="chart-grid">
+              <span></span><span></span><span></span><span></span>
+            </div>
+            <svg class="bp-chart" viewBox="0 0 360 145" preserveAspectRatio="none" aria-label="Blood pressure trend chart">
+              <defs>
+                <linearGradient id="areaBlue" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#62E2FF" stop-opacity=".30"/>
+                  <stop offset="100%" stop-color="#1469E2" stop-opacity="0"/>
+                </linearGradient>
+                <linearGradient id="lineBlue" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#62E2FF"/>
+                  <stop offset="100%" stop-color="#5E7CFF"/>
+                </linearGradient>
+                <filter id="chartGlow">
+                  <feGaussianBlur stdDeviation="3" result="blur"/>
+                  <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+              </defs>
+              <path id="areaPath" class="area-path" d="M8 102 C45 85,70 92,100 72 S155 84,190 61 S255 78,287 58 S330 65,352 43 L352 145 L8 145 Z"></path>
+              <path id="linePath" class="line-path" d="M8 102 C45 85,70 92,100 72 S155 84,190 61 S255 78,287 58 S330 65,352 43"></path>
+              <g id="chartDots" class="chart-dots">
+                <circle cx="8" cy="102" r="4"></circle>
+                <circle cx="62" cy="85" r="4"></circle>
+                <circle cx="116" cy="73" r="4"></circle>
+                <circle cx="172" cy="78" r="4"></circle>
+                <circle cx="229" cy="65" r="4"></circle>
+                <circle cx="289" cy="58" r="4"></circle>
+                <circle cx="352" cy="43" r="5" class="latest-dot"></circle>
+              </g>
+            </svg>
+            <div class="chart-labels">
+              <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+            </div>
+          </div>
+
+          <button class="detail-link tap" id="viewBpHistory">View full history <span>→</span></button>
+        </article>
+      </section>
+
+      <section class="metrics-section">
+        <div class="section-header monitor-section-header">
+          <h2>Today's Metrics</h2>
+          <button class="text-action tap" id="logBtn">+ Log</button>
+        </div>
+
+        <article class="monitor-metric glass-soft">
+          <div class="metric-icon blue-icon">⚖</div>
+          <div class="metric-copy">
+            <span>WEIGHT</span>
+            <div><strong>67.4 kg</strong><em>Current</em></div>
+            <p>Dry weight 66.8 kg</p>
+          </div>
+          <div class="metric-side attention">
+            <span>↗</span>
+            <strong>+0.6</strong>
+            <small>kg</small>
+          </div>
+        </article>
+
+        <article class="monitor-metric glass-soft">
+          <div class="metric-icon aqua-icon">💧</div>
+          <div class="metric-copy fluid-copy">
+            <span>FLUID</span>
+            <div><strong><span id="monitorFluidCurrent">850</span> ml</strong><em>of 1,200 ml</em></div>
+            <div class="mini-progress"><span id="monitorFluidBar"></span></div>
+            <p id="monitorFluidText">350 ml remaining</p>
+          </div>
+          <button class="round-add tap" id="monitorAddFluid" aria-label="Add 150 millilitres fluid">＋</button>
+        </article>
+
+        <article class="monitor-metric glass-soft">
+          <div class="metric-icon green-icon">✓</div>
+          <div class="metric-copy">
+            <span>MEDICATION</span>
+            <div><strong>2 of 3</strong><em>taken</em></div>
+            <p>Evening dose · 8:00 PM</p>
+          </div>
+          <div class="metric-side okay">
+            <strong>67%</strong>
+            <small>today</small>
+          </div>
+        </article>
+      </section>
+
+      <section class="symptoms-card glass-soft">
+        <div class="symptoms-head">
+          <div class="symptom-icon">♡</div>
+          <div>
+            <span>SYMPTOMS</span>
+            <h3>How are you feeling?</h3>
+          </div>
+        </div>
+        <p>No symptoms recorded today.</p>
+        <button class="record-btn tap" id="symptomBtn">Record symptoms</button>
+      </section>
+
+      <section class="next-dialysis-mini glass-soft">
+        <div class="dialysis-mini-icon">✦</div>
+        <div>
+          <span>NEXT DIALYSIS</span>
+          <strong>Tomorrow · 08:30 AM</strong>
+          <p>2 checklist items remaining</p>
+        </div>
+        <button class="mini-arrow tap" aria-label="Open dialysis details">→</button>
+      </section>
+    </section>
+  </main>
+
+  <nav class="bottom-nav" aria-label="Primary navigation">
+    <a class="nav-item tap nav-link" href="index.html"><span class="i">⌂</span><span>Home</span></a>
+    <a class="nav-item active tap nav-link" href="monitor.html"><span class="i">♡</span><span>Monitor</span></a>
+    <button class="nav-item tap" data-label="Learn"><span class="i">▤</span><span>Learn</span></button>
+    <button class="nav-item tap" data-label="Iman"><span class="i">☾</span><span>Iman</span></button>
+    <button class="nav-item tap" data-label="Me"><span class="i">◯</span><span>Me</span></button>
+  </nav>
+
+  <div class="monitor-sheet" id="logSheet" aria-hidden="true">
+    <button class="sheet-backdrop" id="sheetBackdrop" aria-label="Close"></button>
+    <section class="sheet-panel glass">
+      <div class="sheet-handle"></div>
+      <div class="sheet-head">
+        <div>
+          <small>QUICK LOG</small>
+          <h2>Add a health reading</h2>
+        </div>
+        <button class="sheet-close" id="sheetClose" aria-label="Close">×</button>
+      </div>
+      <div class="sheet-options">
+        <button class="sheet-option tap" data-action="Blood pressure"><span>♡</span><b>Blood Pressure</b><small>128 / 78 mmHg</small></button>
+        <button class="sheet-option tap" data-action="Weight"><span>⚖</span><b>Weight</b><small>Record current weight</small></button>
+        <button class="sheet-option tap" data-action="Fluid"><span>💧</span><b>Fluid</b><small>Add drink amount</small></button>
+        <button class="sheet-option tap" data-action="Symptoms"><span>＋</span><b>Symptoms</b><small>How are you feeling?</small></button>
+      </div>
+    </section>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="assets/js/monitor.js"></script>
+</body>
+</html>

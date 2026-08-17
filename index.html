@@ -9,7 +9,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
@@ -27,7 +26,6 @@
           <span class="battery"></span>
         </div>
       </div>
-
       <header class="topbar">
         <div class="brand" aria-label="EDRIS">
           <div class="brand-icon" aria-hidden="true"></div>
@@ -60,18 +58,18 @@
       <section>
         <div class="section-header">
           <h2>Today's Health</h2>
-          <a href="#" class="link" onclick="event.preventDefault(); showToast('Opening monitoring overview')">See all</a>
+          <a href="monitor.html" class="link">See all</a>
         </div>
 
         <div class="grid">
-          <article class="card glass-soft tap" role="button" tabindex="0" aria-label="Blood pressure">
+          <article class="card glass-soft tap" role="button" tabindex="0" aria-label="Blood pressure" onclick="location.href='monitor.html'">
             <div class="metric-label">♡ BLOOD PRESSURE</div>
             <div class="metric-value">128 / 78</div>
             <div class="metric-sub">mmHg</div>
             <div class="metric-status"><i></i>Within target</div>
           </article>
 
-          <article class="card glass-soft tap" role="button" tabindex="0" aria-label="Weight">
+          <article class="card glass-soft tap" role="button" tabindex="0" aria-label="Weight" onclick="location.href='monitor.html'">
             <div class="metric-label">⚖ WEIGHT</div>
             <div class="metric-value">67.4</div>
             <div class="metric-sub">kg · dry weight 66.8</div>
@@ -80,9 +78,7 @@
         </div>
 
         <article class="fluid glass-soft">
-          <div class="fluid-top">
-            <div class="fluid-title">💧 FLUID TODAY</div>
-          </div>
+          <div class="fluid-top"><div class="fluid-title">💧 FLUID TODAY</div></div>
           <div class="fluid-main">
             <strong><span id="fluidCurrent">850</span> ml</strong>
             <span>1,200 ml</span>
@@ -96,21 +92,16 @@
       </section>
 
       <section class="quick-wrap">
-        <div class="section-header">
-          <h2>Quick Actions</h2>
-        </div>
+        <div class="section-header"><h2>Quick Actions</h2></div>
         <div class="quick-grid">
-          <button class="quick glass-soft tap" onclick="showToast('Vitals logging opened')">
-            <div class="icon">＋</div>
-            <span>Vitals</span>
+          <button class="quick glass-soft tap" onclick="location.href='monitor.html'">
+            <div class="icon">＋</div><span>Vitals</span>
           </button>
           <button class="quick glass-soft tap" onclick="document.getElementById('addFluid').click()">
-            <div class="icon">💧</div>
-            <span>Fluid</span>
+            <div class="icon">💧</div><span>Fluid</span>
           </button>
           <button class="quick glass-soft tap" onclick="showToast('Symptoms recording opened')">
-            <div class="icon">♡</div>
-            <span>Symptoms</span>
+            <div class="icon">♡</div><span>Symptoms</span>
           </button>
         </div>
       </section>
@@ -139,15 +130,14 @@
   </main>
 
   <nav class="bottom-nav" aria-label="Primary navigation">
-    <button class="nav-item active tap" data-label="Home"><span class="i">⌂</span><span>Home</span></button>
-    <button class="nav-item tap" data-label="Monitor"><span class="i">♡</span><span>Monitor</span></button>
+    <a class="nav-item active tap" href="index.html" style="text-decoration:none"><span class="i">⌂</span><span>Home</span></a>
+    <a class="nav-item tap" href="monitor.html" style="text-decoration:none"><span class="i">♡</span><span>Monitor</span></a>
     <button class="nav-item tap" data-label="Learn"><span class="i">▤</span><span>Learn</span></button>
     <button class="nav-item tap" data-label="Iman"><span class="i">☾</span><span>Iman</span></button>
     <button class="nav-item tap" data-label="Me"><span class="i">◯</span><span>Me</span></button>
   </nav>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
-
   <script src="assets/js/app.js"></script>
 </body>
 </html>

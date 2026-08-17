@@ -1,0 +1,27 @@
+EDRIS MONITOR SCREEN UPDATE
+
+Copy these files into your existing edris-ui repository:
+
+1. Replace:
+   index.html
+
+2. Add:
+   monitor.html
+   assets/css/monitor.css
+   assets/js/monitor.js
+
+Then in PowerShell, from C:\Users\amzar\Downloads\edris-ui:
+
+git status
+git add index.html monitor.html assets/css/monitor.css assets/js/monitor.js
+git commit -m "Add monitoring dashboard"
+git push origin main
+
+GitHub Actions will automatically deploy the update.
+
+After deployment:
+Home:
+https://amzarzubaidi7444-commits.github.io/edris-ui/
+
+Monitoring:
+https://amzarzubaidi7444-commits.github.io/edris-ui/monitor.html
