@@ -1,53 +1,45 @@
 # EDRIS Health Education
 
-Fresh reset of the EDRIS web prototype focused only on health education.
+A mobile-first health education web app / PWA based on the supplied EDRIS education UI/UX PDF and EDRIS brand identity.
 
-## What this version contains
+## What changed
 
-- EDRIS brand identity (`#1469E2`, `#262B6A`, black, white)
-- Oxygen UI typography
-- Education-only home experience
-- Six education categories from the supplied PDF
-- All 23 supplied education screens preserved as exact rendered pages
-- Topic reader with previous/next navigation
-- Saved topics using browser local storage
-- Search
-- Full-page zoom
-- Mobile swipe navigation
-- GitHub Pages compatible
+This is a full reset of the previous monitoring/dialysis prototype. The product is now focused on health education.
 
-## Education sections
-
-1. Kerohanian / Spiritual - PDF pages 2-6
-2. Merokok / Smoking - PDF pages 7-8
-3. Aktiviti Fizikal & Senaman - PDF pages 9-14
-4. Penyakit Buah Pinggang Kronik - PDF pages 15-17
-5. Rawatan Dialisis - PDF pages 18-20
-6. Tips Pemakanan Pesakit Dialisis - PDF pages 21-23
+- Real HTML content instead of opening PDF pages as images.
+- Six education topics and 20 structured lessons.
+- Bahasa Melayu, English, or bilingual reading modes.
+- Search across educational content.
+- Saved lessons using local storage.
+- Reading completion tracking.
+- Light / dark mode and text-size preferences.
+- Responsive mobile, tablet, and desktop layouts.
+- Installable PWA shell with offline caching.
+- EDRIS brand colors: #1469E2 and #262B6A.
+- Oxygen typography with Noto Sans Arabic for Arabic content.
 
 ## Run locally
 
-Open `index.html`, or use:
+You can open `index.html` directly for a quick preview. For full PWA/service-worker behavior, serve the folder using a local web server:
 
-```powershell
+```bash
 python -m http.server 8080
 ```
 
-Then visit `http://localhost:8080`.
+Then open:
+
+```text
+http://localhost:8080
+```
 
 ## GitHub Pages
 
-This is a static website and works with the GitHub Pages workflow already used in your repository.
+The app is static and works with the existing GitHub Pages workflow already in your repository.
 
-## Brand identity
+## Store publishing
 
-This update applies the supplied EDRIS identity consistently across the education app shell:
+This repository is the production-style frontend/PWA. Google Play and Apple App Store distribution still requires packaging it as a native application (for example with Capacitor) or rebuilding the UI in Flutter/React Native. The web UI itself is not an APK, AAB, or IPA.
 
-- Primary: `#1469E2`
-- Secondary: `#262B6A`
-- Black: `#000000`
-- White: `#FFFFFF`
-- Typography: Oxygen
-- Logo and app icon derived from the supplied EDRIS brand board
+## Important
 
-The 23 education-page images remain unchanged so the educational layouts and information stay faithful to the supplied PDF.
+The content is educational and is not intended to replace medical advice, diagnosis, or treatment by a healthcare professional.

@@ -1,180 +1,92 @@
 <!doctype html>
 <html lang="ms">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#1469E2">
-  <meta name="description" content="EDRIS Health Education - Pendidikan Kesihatan untuk pesakit dialisis dan keluarga.">
-  <title>EDRIS Education</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="manifest" href="manifest.webmanifest">
-  <link rel="stylesheet" href="assets/css/app.css">
-  <link rel="stylesheet" href="assets/css/brand.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#1469E2" />
+  <meta name="description" content="EDRIS Health Education - dialysis and kidney health education." />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="EDRIS" />
+  <title>EDRIS Health Education</title>
+
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;600;700&family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/app.css" />
 </head>
 <body>
-  <div id="brandSplash" class="brand-splash" aria-hidden="true">
-    <div class="brand-splash__glow brand-splash__glow--one"></div>
-    <div class="brand-splash__glow brand-splash__glow--two"></div>
-    <div class="brand-splash__content">
-      <img class="brand-splash__icon" src="assets/brand/app-icon.png" alt="">
-      <img class="brand-splash__logo" src="assets/brand/edris-logo-white.png" alt="EDRIS">
-      <span>HEALTH EDUCATION</span>
-    </div>
-  </div>
+  <div class="ambient ambient-a" aria-hidden="true"></div>
+  <div class="ambient ambient-b" aria-hidden="true"></div>
 
-  <div id="app" class="app-shell">
-    <header class="brand-header">
-      <div class="brand-header__inner">
-        <button id="readerBack" class="icon-button back-button is-hidden" aria-label="Kembali">←</button>
-        <a class="brand-lockup" href="#home" aria-label="EDRIS Education home">
-          <img src="assets/brand/edris-logo-white.png" alt="EDRIS">
-        </a>
-        <button id="headerSearchButton" class="icon-button" aria-label="Cari topik">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.5-4.5m2-5A7 7 0 1 1 4.5 11.5a7 7 0 0 1 14 0Z"/></svg>
+  <div class="app-shell">
+    <header class="app-header" id="appHeader">
+      <button class="brand-button" id="brandButton" aria-label="EDRIS home">
+        <img src="assets/icons/icon-192.png" alt="" class="brand-mark" />
+        <span class="brand-copy">
+          <strong>EDRIS</strong>
+          <small>Health Education</small>
+        </span>
+      </button>
+
+      <div class="header-actions">
+        <button class="icon-button" id="searchButton" aria-label="Search">
+          <span data-icon="search"></span>
+        </button>
+        <button class="profile-button" id="profileButton" aria-label="Open settings">
+          <span>A</span>
         </button>
       </div>
     </header>
 
-    <main id="homeView" class="view">
-      <section class="hero">
-        <div class="hero__brand-mark" aria-hidden="true">
-          <img src="assets/brand/app-icon.png" alt="">
-        </div>
-        <div class="hero__eyebrow">EDRIS · PENDIDIKAN KESIHATAN</div>
-        <h1>Fahami kesihatan anda,<br><span>satu topik pada satu masa.</span></h1>
-        <p>Maklumat kesihatan yang jelas dan mudah dibaca untuk pesakit dialisis, keluarga dan penjaga.</p>
+    <aside class="desktop-rail" aria-label="Primary navigation">
+      <div class="rail-brand">
+        <img src="assets/icons/icon-192.png" alt="" />
+        <div><strong>EDRIS</strong><small>Health Education</small></div>
+      </div>
+      <nav class="rail-nav" id="railNav"></nav>
+      <div class="rail-note">
+        <span data-icon="shield"></span>
+        <p>Clinically structured health education for dialysis patients.</p>
+      </div>
+    </aside>
 
-        <label class="search-box">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.5-4.5m2-5A7 7 0 1 1 4.5 11.5a7 7 0 0 1 14 0Z"/></svg>
-          <input id="searchInput" type="search" placeholder="Cari topik / Search topics" autocomplete="off">
-        </label>
-      </section>
-
-      <section class="section">
-        <div class="section-heading">
-          <div>
-            <span>TOPIK UTAMA</span>
-            <h2>Pendidikan / Education</h2>
-          </div>
-          <button id="showAllButton" class="text-button">Lihat semua</button>
-        </div>
-
-        <div id="categoryList" class="category-list"></div>
-        <div id="emptySearch" class="empty-state is-hidden">
-          <div class="empty-state__icon">⌕</div>
-          <strong>Tiada topik ditemui</strong>
-          <p>Cuba kata kunci lain.</p>
-        </div>
-      </section>
-
-      <section class="source-note">
-        <div class="source-note__icon">i</div>
-        <div>
-          <strong>Kandungan pendidikan EDRIS</strong>
-          <p>23 skrin pendidikan disusun mengikut bahan EDRIS asal supaya kandungan dan susun atur pembelajaran kekal konsisten.</p>
-        </div>
-      </section>
-    </main>
-
-    <main id="topicsView" class="view is-hidden">
-      <section class="simple-page-heading">
-        <span>SEMUA TOPIK</span>
-        <h1>Health Education</h1>
-        <p>Pilih topik untuk membaca bahan pendidikan.</p>
-      </section>
-      <div id="topicsGrid" class="topics-grid"></div>
-    </main>
-
-    <main id="savedView" class="view is-hidden">
-      <section class="simple-page-heading">
-        <span>DISIMPAN</span>
-        <h1>Saved topics</h1>
-        <p>Topik yang anda tandakan akan muncul di sini.</p>
-      </section>
-      <div id="savedList" class="saved-list"></div>
-      <div id="savedEmpty" class="empty-state">
-        <div class="empty-state__icon">♡</div>
-        <strong>Belum ada topik disimpan</strong>
-        <p>Tekan ikon simpan semasa membaca topik.</p>
+    <main id="app" class="app-main" tabindex="-1">
+      <div class="initial-loader" aria-live="polite">
+        <div class="loader-mark"></div>
+        <span>Loading EDRIS…</span>
       </div>
     </main>
 
-    <main id="aboutView" class="view is-hidden">
-      <section class="about-card">
-        <div class="about-card__logo"><img src="assets/brand/edris-logo-white.png" alt="EDRIS"></div>
-        <div class="about-card__content">
-          <span>HEALTH EDUCATION</span>
-          <h1>EDRIS Education</h1>
-          <p>A focused education experience built from the supplied EDRIS learning material, using the EDRIS brand identity.</p>
-          <div class="brand-swatches">
-            <i style="--swatch:#1469E2" title="#1469E2"></i>
-            <i style="--swatch:#262B6A" title="#262B6A"></i>
-            <i style="--swatch:#000000" title="#000000"></i>
-            <i style="--swatch:#FFFFFF" title="#FFFFFF"></i>
-          </div>
-          <div class="brand-spec">
-            <div><span>Typography</span><strong>Oxygen</strong></div>
-            <div><span>Primary</span><strong>#1469E2</strong></div>
-            <div><span>Secondary</span><strong>#262B6A</strong></div>
-          </div>
-        </div>
-      </section>
-    </main>
+    <nav class="bottom-nav" id="bottomNav" aria-label="Primary navigation"></nav>
+  </div>
 
-    <main id="readerView" class="reader-view is-hidden">
-      <section class="reader-toolbar">
-        <div class="reader-toolbar__text">
-          <span id="readerCategoryEn">Education</span>
-          <h1 id="readerTitle">Topic</h1>
-        </div>
-        <button id="saveTopicButton" class="save-button" aria-label="Simpan topik">
-          <span id="saveIcon">♡</span>
+  <dialog class="search-dialog" id="searchDialog">
+    <div class="search-sheet">
+      <div class="search-sheet-head">
+        <button class="icon-button back" id="closeSearch" aria-label="Close search">
+          <span data-icon="arrow-left"></span>
         </button>
-      </section>
-
-      <section class="reader-progress">
-        <div><span id="readerProgressBar"></span></div>
-        <p><strong id="readerCurrent">1</strong> / <span id="readerTotal">1</span></p>
-      </section>
-
-      <section id="pageStage" class="page-stage">
-        <button id="zoomButton" class="education-page" aria-label="Besarkan halaman">
-          <img id="readerImage" src="" alt="">
-        </button>
-      </section>
-
-      <section class="reader-controls">
-        <button id="previousPage" class="reader-control">← <span>Sebelum</span></button>
-        <button id="nextPage" class="reader-control reader-control--primary"><span>Seterusnya</span> →</button>
-      </section>
-    </main>
-
-    <nav id="bottomNav" class="bottom-nav" aria-label="Navigasi utama">
-      <a href="#home" class="nav-item active" data-view="home">
-        <span class="nav-icon">⌂</span><span>Home</span>
-      </a>
-      <a href="#topics" class="nav-item" data-view="topics">
-        <span class="nav-icon">▤</span><span>Topics</span>
-      </a>
-      <a href="#saved" class="nav-item" data-view="saved">
-        <span class="nav-icon">♡</span><span>Saved</span>
-      </a>
-      <a href="#about" class="nav-item" data-view="about">
-        <span class="nav-icon">ⓘ</span><span>About</span>
-      </a>
-    </nav>
-
-    <div id="zoomOverlay" class="zoom-overlay is-hidden" role="dialog" aria-modal="true">
-      <button id="closeZoom" class="zoom-overlay__close" aria-label="Tutup">×</button>
-      <div class="zoom-overlay__scroll">
-        <img id="zoomImage" alt="">
+        <label class="search-field">
+          <span data-icon="search"></span>
+          <input id="globalSearchInput" type="search" autocomplete="off" placeholder="Cari topik kesihatan..." />
+          <button type="button" id="clearSearch" class="clear-search" aria-label="Clear search">×</button>
+        </label>
+      </div>
+      <div class="search-results-wrap">
+        <p class="search-helper">Search in Bahasa Melayu or English.</p>
+        <div id="searchResults"></div>
       </div>
     </div>
+  </dialog>
 
-    <div id="toast" class="toast" role="status" aria-live="polite"></div>
-  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="assets/js/content.js"></script>
   <script src="assets/js/app.js"></script>
 </body>
 </html>

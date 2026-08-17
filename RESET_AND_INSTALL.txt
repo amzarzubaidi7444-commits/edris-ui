@@ -1,0 +1,39 @@
+EDRIS HEALTH EDUCATION - FULL RESET UPDATE
+
+This package replaces the previous EDRIS monitoring/dialysis website.
+
+1. Go to your current repository folder:
+   C:\Users\amzar\Downloads\edris-ui
+
+2. KEEP these folders because they contain your Git history and deployment workflow:
+   .git
+   .github
+
+3. Delete the old website files/folders such as:
+   index.html
+   monitor.html
+   dialysis.html
+   assets
+   manifest.webmanifest
+   sw.js
+   README.md
+   .nojekyll
+
+4. Extract this ZIP and copy ALL files/folders from it into:
+   C:\Users\amzar\Downloads\edris-ui
+
+5. In PowerShell, from inside edris-ui:
+
+   git status
+   git add -A
+   git commit -m "Rebuild EDRIS as production health education app"
+   git push origin main
+
+6. Wait for GitHub Actions to show a green checkmark.
+
+7. Refresh the live site using Ctrl + F5.
+
+IMPORTANT:
+- `git add -A` is required because this reset removes the old monitoring/dialysis files.
+- The new application does NOT open education pages as full-page images.
+- Education content is rendered as real HTML, with responsive text, cards, images and controls.
