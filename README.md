@@ -43,3 +43,27 @@ This repository is the production-style frontend/PWA. Google Play and Apple App 
 ## Important
 
 The content is educational and is not intended to replace medical advice, diagnosis, or treatment by a healthcare professional.
+
+
+## Functional mobile update (v1.1)
+
+Version 1.1 adds:
+
+- Fully working Home / Learn / Saved / More navigation
+- Search, clear search and result navigation
+- Topic and lesson navigation
+- Save / unsave lessons
+- Complete / uncomplete lessons
+- Previous and next lesson controls
+- Native mobile sharing with copy-link fallback
+- Bahasa Melayu / English / bilingual controls
+- Text-size controls
+- Light / dark mode
+- Install-to-device flow for supported Android browsers and iOS Add to Home Screen guidance
+- Reset reading progress and clear saved lessons
+- Back-to-top control
+- Online / offline feedback
+- Responsive mobile safe-area layout and touch feedback
+- PWA/offline support through the service worker
+
+This remains a web/PWA build, optimized for phone use and installable to a home screen.

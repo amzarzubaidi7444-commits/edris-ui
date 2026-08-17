@@ -84,6 +84,30 @@
     </div>
   </dialog>
 
+
+  <dialog class="action-dialog" id="actionDialog">
+    <div class="action-sheet" role="document">
+      <div class="action-sheet-handle" aria-hidden="true"></div>
+      <div class="action-sheet-head">
+        <div>
+          <small id="actionDialogKicker">EDRIS</small>
+          <h2 id="actionDialogTitle">Action</h2>
+        </div>
+        <button class="icon-button" id="closeActionDialog" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div id="actionDialogBody" class="action-dialog-body"></div>
+      <div id="actionDialogActions" class="action-dialog-actions"></div>
+    </div>
+  </dialog>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <span aria-hidden="true">↑</span>
+  </button>
+
+  <div class="network-indicator" id="networkIndicator" role="status" aria-live="polite"></div>
+
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <script src="assets/js/content.js"></script>
