@@ -1,54 +1,103 @@
-EDRIS DIALYSIS SCREEN — INSTALL
+EDRIS EDUCATION — PDF-REFERENCE UPDATE
+======================================
 
-Copy these 3 files into your current edris-ui repository:
+This update follows the supplied "UI UX Education Edris.pdf" visually by using
+high-quality renders of the actual approved PDF pages as the education UI.
 
-dialysis.html
-assets/css/dialysis.css
-assets/js/dialysis.js
+WHY THIS METHOD
+---------------
+The PDF uses many exact photos, Arabic text, bilingual Malay/English copy,
+card positions, shadows and typography. Rendering the approved pages directly
+keeps those details visually faithful instead of approximating them in CSS.
 
-Your project should become:
+FILES TO COPY
+-------------
+Copy ALL of these into your existing:
 
+C:\Users\amzar\Downloads\edris-ui
+
+education.html
+
+assets\css\education-reference.css
+assets\js\education-reference.js
+assets\education\page-01.webp
+...
+assets\education\page-23.webp
+
+
+FINAL PROJECT EXAMPLE
+---------------------
 edris-ui/
 ├── index.html
 ├── monitor.html
 ├── dialysis.html
+├── education.html
 └── assets/
     ├── css/
     │   ├── styles.css
     │   ├── monitor.css
-    │   └── dialysis.css
-    └── js/
-        ├── app.js
-        ├── monitor.js
-        └── dialysis.js
+    │   ├── dialysis.css
+    │   └── education-reference.css
+    ├── js/
+    │   ├── app.js
+    │   ├── monitor.js
+    │   ├── dialysis.js
+    │   └── education-reference.js
+    └── education/
+        ├── page-01.webp
+        ├── ...
+        └── page-23.webp
 
 
-OPTIONAL: CONNECT YOUR EXISTING BUTTONS
+CONNECT THE LEARN BUTTON
+------------------------
+In index.html, monitor.html and dialysis.html, replace the current Learn button:
 
-HOME
-In index.html find your "View →" button inside the Next Dialysis card.
-Change it to:
+<button class="nav-item tap" data-label="Learn">...</button>
 
-<button class="hero-pill tap" onclick="location.href='dialysis.html'">View →</button>
+with:
 
-
-MONITOR
-In monitor.html find the small "Next Dialysis" card arrow.
-Change it to:
-
-<button class="mini-arrow tap" onclick="location.href='dialysis.html'" aria-label="Open dialysis details">→</button>
+<a class="nav-item tap" href="education.html" style="text-decoration:none">
+  <span class="i">▤</span><span>Learn</span>
+</a>
 
 
-UPLOAD / GIT
+GIT COMMANDS
+------------
+Open PowerShell in:
 
-If using PowerShell:
+C:\Users\amzar\Downloads\edris-ui
+
+Then:
 
 git status
-git add dialysis.html assets/css/dialysis.css assets/js/dialysis.js
-git commit -m "Add dialysis session screen"
+git add education.html assets/css/education-reference.css assets/js/education-reference.js assets/education
+git commit -m "Add PDF-matched EDRIS education screens"
 git push origin main
 
 
-After GitHub Actions completes:
+LIVE URL AFTER GITHUB ACTIONS
+-----------------------------
+https://amzarzubaidi7444-commits.github.io/edris-ui/education.html
 
-https://amzarzubaidi7444-commits.github.io/edris-ui/dialysis.html
+
+INTERACTION
+-----------
+Page 1:
+- Tap each education category card.
+
+Content pages:
+- Tap the back arrow in the PDF design to return to categories.
+- Swipe LEFT / RIGHT to move through pages within that category.
+- Desktop: Arrow Left / Arrow Right.
+- Spiritual screens: ZIKIR and DOA buttons are clickable.
+
+CATEGORY PAGE MAPPING
+---------------------
+1       Education categories
+2-6     Kerohanian / Spiritual
+7-8     Merokok / Smoking
+9-14    Aktiviti Fizikal & Senaman / Physical Activity & Exercise
+15-17   Penyakit Buah Pinggang Kronik / Chronic Kidney Disease
+18-20   Rawatan Dialisis / Dialysis Treatment
+21-23   Tips Pemakanan Pesakit Dialisis / Dietary Tips
