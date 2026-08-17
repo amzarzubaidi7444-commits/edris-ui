@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#1469E2" />
+  <title>EDRIS — Dialysis</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/dialysis.css">
+</head>
+<body class="dialysis-page">
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-orb orb-3"></div>
+
+  <main class="shell">
+    <section class="frame dialysis-frame">
+      <div class="statusbar" aria-hidden="true">
+        <span>9:41</span>
+        <div class="status-icons">
+          <span class="signal"><i></i><i></i><i></i></span>
+          <span>5G</span>
+          <span class="battery"></span>
+        </div>
+      </div>
+
+      <header class="dialysis-topbar">
+        <a class="back-btn tap" href="monitor.html" aria-label="Back to monitoring">←</a>
+        <div class="page-title">
+          <span>DIALYSIS</span>
+          <strong>Session</strong>
+        </div>
+        <button class="glass-icon tap" id="sessionInfoBtn" aria-label="Session information">i</button>
+      </header>
+
+      <section class="session-hero">
+        <div class="hero-glow"></div>
+        <div class="session-top">
+          <div>
+            <span class="session-kicker">NEXT SESSION</span>
+            <h1>Tomorrow</h1>
+            <div class="session-time">08:30 AM</div>
+          </div>
+          <div class="countdown-chip">
+            <strong id="countdownNumber">22</strong>
+            <span>hours</span>
+          </div>
+        </div>
+
+        <div class="session-location">
+          <span class="location-dot"></span>
+          <div>
+            <strong>Kuala Lumpur Dialysis Centre</strong>
+            <small>18 August · 4 hour session</small>
+          </div>
+        </div>
+
+        <div class="session-actions">
+          <button class="primary-glass tap" id="directionsBtn">Directions</button>
+          <button class="secondary-glass tap" id="callClinicBtn">Call clinic</button>
+        </div>
+      </section>
+
+      <section class="readiness glass">
+        <div class="readiness-head">
+          <div>
+            <span class="readiness-kicker">PRE-DIALYSIS</span>
+            <h2>Get ready for your session</h2>
+          </div>
+          <div class="progress-ring" aria-label="2 of 4 checklist items completed">
+            <svg viewBox="0 0 76 76" aria-hidden="true">
+              <circle class="ring-track" cx="38" cy="38" r="31"></circle>
+              <circle class="ring-value" cx="38" cy="38" r="31"></circle>
+            </svg>
+            <div><strong id="doneCount">2</strong><span>/4</span></div>
+          </div>
+        </div>
+
+        <div class="checklist" id="checklist">
+          <button class="check-row completed tap" data-check="bp">
+            <span class="check-box">✓</span>
+            <div>
+              <strong>Blood pressure</strong>
+              <small>128 / 78 mmHg · 8:10 AM</small>
+            </div>
+            <span class="row-state">Done</span>
+          </button>
+
+          <button class="check-row completed tap" data-check="meds">
+            <span class="check-box">✓</span>
+            <div>
+              <strong>Medication check</strong>
+              <small>Morning medicines recorded</small>
+            </div>
+            <span class="row-state">Done</span>
+          </button>
+
+          <button class="check-row tap" data-check="weight">
+            <span class="check-box"></span>
+            <div>
+              <strong>Record weight</strong>
+              <small>Required before dialysis</small>
+            </div>
+            <span class="row-state">Add →</span>
+          </button>
+
+          <button class="check-row tap" data-check="symptoms">
+            <span class="check-box"></span>
+            <div>
+              <strong>Symptoms check</strong>
+              <small>Tell us how you feel today</small>
+            </div>
+            <span class="row-state">Start →</span>
+          </button>
+        </div>
+
+        <button class="continue-btn tap" id="continueChecklist">Continue checklist</button>
+      </section>
+
+      <section class="section-title">
+        <h2>Session Overview</h2>
+        <button class="text-btn tap" id="historyBtn">History</button>
+      </section>
+
+      <div class="session-stats">
+        <article class="stat-card glass-soft">
+          <span>DRY WEIGHT</span>
+          <strong>66.8</strong>
+          <small>kg</small>
+        </article>
+
+        <article class="stat-card glass-soft">
+          <span>LAST SESSION</span>
+          <strong>4h 02m</strong>
+          <small>completed</small>
+        </article>
+      </div>
+
+      <section class="last-session glass-soft">
+        <div class="last-head">
+          <div>
+            <span>LAST SESSION</span>
+            <h3>Saturday · Completed</h3>
+          </div>
+          <span class="status-chip">✓ Complete</span>
+        </div>
+
+        <div class="weight-change">
+          <div>
+            <span>Before</span>
+            <strong>68.1 kg</strong>
+          </div>
+          <div class="weight-line">
+            <span>−1.2 kg</span>
+            <div><i></i></div>
+          </div>
+          <div class="after">
+            <span>After</span>
+            <strong>66.9 kg</strong>
+          </div>
+        </div>
+
+        <button class="detail-row tap" id="viewLastSession">
+          <span>View session details</span><strong>→</strong>
+        </button>
+      </section>
+
+      <section class="care-tip glass-soft">
+        <div class="tip-icon">✦</div>
+        <div>
+          <span>PREPARATION TIP</span>
+          <h3>Keep your access area clean</h3>
+          <p>Review your care team's preparation guidance before tomorrow's session.</p>
+        </div>
+        <button class="mini-arrow tap" id="tipBtn">→</button>
+      </section>
+    </section>
+  </main>
+
+  <nav class="bottom-nav" aria-label="Primary navigation">
+    <a class="nav-item tap nav-link" href="index.html"><span class="i">⌂</span><span>Home</span></a>
+    <a class="nav-item active tap nav-link" href="monitor.html"><span class="i">♡</span><span>Monitor</span></a>
+    <button class="nav-item tap" data-label="Learn"><span class="i">▤</span><span>Learn</span></button>
+    <button class="nav-item tap" data-label="Iman"><span class="i">☾</span><span>Iman</span></button>
+    <button class="nav-item tap" data-label="Me"><span class="i">◯</span><span>Me</span></button>
+  </nav>
+
+  <div class="sheet" id="weightSheet" aria-hidden="true">
+    <button class="sheet-backdrop" id="weightBackdrop" aria-label="Close"></button>
+    <section class="sheet-panel glass">
+      <div class="sheet-handle"></div>
+      <div class="sheet-heading">
+        <div>
+          <small>PRE-DIALYSIS</small>
+          <h2>Record your weight</h2>
+        </div>
+        <button class="sheet-close" id="weightClose" aria-label="Close">×</button>
+      </div>
+
+      <div class="weight-input-wrap">
+        <button class="stepper tap" id="weightMinus">−</button>
+        <div class="weight-input">
+          <input id="weightInput" inputmode="decimal" value="67.4" aria-label="Weight in kilograms" />
+          <span>kg</span>
+        </div>
+        <button class="stepper tap" id="weightPlus">＋</button>
+      </div>
+
+      <div class="dry-weight-note">
+        <span>Target dry weight</span>
+        <strong>66.8 kg</strong>
+      </div>
+
+      <button class="save-weight tap" id="saveWeight">Save weight</button>
+    </section>
+  </div>
+
+  <div class="sheet" id="symptomSheet" aria-hidden="true">
+    <button class="sheet-backdrop" id="symptomBackdrop" aria-label="Close"></button>
+    <section class="sheet-panel glass">
+      <div class="sheet-handle"></div>
+      <div class="sheet-heading">
+        <div>
+          <small>PRE-DIALYSIS</small>
+          <h2>How are you feeling?</h2>
+        </div>
+        <button class="sheet-close" id="symptomClose" aria-label="Close">×</button>
+      </div>
+
+      <div class="symptom-grid">
+        <button class="symptom-choice tap" data-symptom="Breathlessness">Breathlessness</button>
+        <button class="symptom-choice tap" data-symptom="Swelling">Swelling</button>
+        <button class="symptom-choice tap" data-symptom="Nausea">Nausea</button>
+        <button class="symptom-choice tap" data-symptom="Dizziness">Dizziness</button>
+        <button class="symptom-choice tap" data-symptom="Fatigue">Fatigue</button>
+        <button class="symptom-choice tap" data-symptom="No symptoms">No symptoms</button>
+      </div>
+
+      <button class="save-weight tap" id="saveSymptoms">Save symptoms</button>
+    </section>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="assets/js/dialysis.js"></script>
+</body>
+</html>

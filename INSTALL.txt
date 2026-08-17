@@ -1,27 +1,54 @@
-EDRIS MONITOR SCREEN UPDATE
+EDRIS DIALYSIS SCREEN — INSTALL
 
-Copy these files into your existing edris-ui repository:
+Copy these 3 files into your current edris-ui repository:
 
-1. Replace:
-   index.html
+dialysis.html
+assets/css/dialysis.css
+assets/js/dialysis.js
 
-2. Add:
-   monitor.html
-   assets/css/monitor.css
-   assets/js/monitor.js
+Your project should become:
 
-Then in PowerShell, from C:\Users\amzar\Downloads\edris-ui:
+edris-ui/
+├── index.html
+├── monitor.html
+├── dialysis.html
+└── assets/
+    ├── css/
+    │   ├── styles.css
+    │   ├── monitor.css
+    │   └── dialysis.css
+    └── js/
+        ├── app.js
+        ├── monitor.js
+        └── dialysis.js
+
+
+OPTIONAL: CONNECT YOUR EXISTING BUTTONS
+
+HOME
+In index.html find your "View →" button inside the Next Dialysis card.
+Change it to:
+
+<button class="hero-pill tap" onclick="location.href='dialysis.html'">View →</button>
+
+
+MONITOR
+In monitor.html find the small "Next Dialysis" card arrow.
+Change it to:
+
+<button class="mini-arrow tap" onclick="location.href='dialysis.html'" aria-label="Open dialysis details">→</button>
+
+
+UPLOAD / GIT
+
+If using PowerShell:
 
 git status
-git add index.html monitor.html assets/css/monitor.css assets/js/monitor.js
-git commit -m "Add monitoring dashboard"
+git add dialysis.html assets/css/dialysis.css assets/js/dialysis.js
+git commit -m "Add dialysis session screen"
 git push origin main
 
-GitHub Actions will automatically deploy the update.
 
-After deployment:
-Home:
-https://amzarzubaidi7444-commits.github.io/edris-ui/
+After GitHub Actions completes:
 
-Monitoring:
-https://amzarzubaidi7444-commits.github.io/edris-ui/monitor.html
+https://amzarzubaidi7444-commits.github.io/edris-ui/dialysis.html
