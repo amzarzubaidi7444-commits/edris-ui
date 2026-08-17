@@ -1,143 +1,180 @@
 <!doctype html>
-<html lang="en">
+<html lang="ms">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#1469E2" />
-  <title>EDRIS — Glass UI Home</title>
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#1469E2">
+  <meta name="description" content="EDRIS Health Education - Pendidikan Kesihatan untuk pesakit dialisis dan keluarga.">
+  <title>EDRIS Education</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="assets/css/app.css">
+  <link rel="stylesheet" href="assets/css/brand.css">
 </head>
 <body>
-  <div class="bg-orb orb-1"></div>
-  <div class="bg-orb orb-2"></div>
-  <div class="bg-orb orb-3"></div>
+  <div id="brandSplash" class="brand-splash" aria-hidden="true">
+    <div class="brand-splash__glow brand-splash__glow--one"></div>
+    <div class="brand-splash__glow brand-splash__glow--two"></div>
+    <div class="brand-splash__content">
+      <img class="brand-splash__icon" src="assets/brand/app-icon.png" alt="">
+      <img class="brand-splash__logo" src="assets/brand/edris-logo-white.png" alt="EDRIS">
+      <span>HEALTH EDUCATION</span>
+    </div>
+  </div>
 
-  <main class="shell">
-    <section class="frame">
-      <div class="statusbar" aria-hidden="true">
-        <span>9:41</span>
-        <div class="status-icons">
-          <span class="signal"><i></i><i></i><i></i></span>
-          <span>5G</span>
-          <span class="battery"></span>
-        </div>
-      </div>
-      <header class="topbar">
-        <div class="brand" aria-label="EDRIS">
-          <div class="brand-icon" aria-hidden="true"></div>
-          <span>EDRIS</span>
-        </div>
-        <button class="icon-btn tap" id="themeBtn" aria-label="Toggle theme">
-          <span>✦</span>
-          <span class="badge-dot"></span>
+  <div id="app" class="app-shell">
+    <header class="brand-header">
+      <div class="brand-header__inner">
+        <button id="readerBack" class="icon-button back-button is-hidden" aria-label="Kembali">←</button>
+        <a class="brand-lockup" href="#home" aria-label="EDRIS Education home">
+          <img src="assets/brand/edris-logo-white.png" alt="EDRIS">
+        </a>
+        <button id="headerSearchButton" class="icon-button" aria-label="Cari topik">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.5-4.5m2-5A7 7 0 1 1 4.5 11.5a7 7 0 0 1 14 0Z"/></svg>
         </button>
-      </header>
+      </div>
+    </header>
 
-      <section class="greeting">
-        <small>Monday, 17 August</small>
-        <h1>Assalamu'alaikum,<br>Amzar</h1>
-      </section>
-
+    <main id="homeView" class="view">
       <section class="hero">
-        <div class="eyebrow">NEXT DIALYSIS</div>
-        <div class="day">Tomorrow</div>
-        <div class="time">08:30 AM</div>
-        <div class="hero-bottom">
-          <div class="clinic">
-            <span class="pin"></span>
-            <span>Kuala Lumpur Dialysis Centre</span>
+        <div class="hero__brand-mark" aria-hidden="true">
+          <img src="assets/brand/app-icon.png" alt="">
+        </div>
+        <div class="hero__eyebrow">EDRIS · PENDIDIKAN KESIHATAN</div>
+        <h1>Fahami kesihatan anda,<br><span>satu topik pada satu masa.</span></h1>
+        <p>Maklumat kesihatan yang jelas dan mudah dibaca untuk pesakit dialisis, keluarga dan penjaga.</p>
+
+        <label class="search-box">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.5-4.5m2-5A7 7 0 1 1 4.5 11.5a7 7 0 0 1 14 0Z"/></svg>
+          <input id="searchInput" type="search" placeholder="Cari topik / Search topics" autocomplete="off">
+        </label>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <div>
+            <span>TOPIK UTAMA</span>
+            <h2>Pendidikan / Education</h2>
           </div>
-          <button class="hero-pill tap" onclick="showToast('Opening dialysis details')">View →</button>
+          <button id="showAllButton" class="text-button">Lihat semua</button>
+        </div>
+
+        <div id="categoryList" class="category-list"></div>
+        <div id="emptySearch" class="empty-state is-hidden">
+          <div class="empty-state__icon">⌕</div>
+          <strong>Tiada topik ditemui</strong>
+          <p>Cuba kata kunci lain.</p>
         </div>
       </section>
 
-      <section>
-        <div class="section-header">
-          <h2>Today's Health</h2>
-          <a href="monitor.html" class="link">See all</a>
-        </div>
-
-        <div class="grid">
-          <article class="card glass-soft tap" role="button" tabindex="0" aria-label="Blood pressure" onclick="location.href='monitor.html'">
-            <div class="metric-label">♡ BLOOD PRESSURE</div>
-            <div class="metric-value">128 / 78</div>
-            <div class="metric-sub">mmHg</div>
-            <div class="metric-status"><i></i>Within target</div>
-          </article>
-
-          <article class="card glass-soft tap" role="button" tabindex="0" aria-label="Weight" onclick="location.href='monitor.html'">
-            <div class="metric-label">⚖ WEIGHT</div>
-            <div class="metric-value">67.4</div>
-            <div class="metric-sub">kg · dry weight 66.8</div>
-            <div class="trend">+0.6 kg since last session</div>
-          </article>
-        </div>
-
-        <article class="fluid glass-soft">
-          <div class="fluid-top"><div class="fluid-title">💧 FLUID TODAY</div></div>
-          <div class="fluid-main">
-            <strong><span id="fluidCurrent">850</span> ml</strong>
-            <span>1,200 ml</span>
-          </div>
-          <div class="progress"><div class="bar" id="fluidBar"></div></div>
-          <div class="fluid-bottom" style="margin-top:12px">
-            <span class="remaining" id="fluidLabel">350 ml remaining</span>
-            <button class="mini-btn tap" id="addFluid">+ Add</button>
-          </div>
-        </article>
-      </section>
-
-      <section class="quick-wrap">
-        <div class="section-header"><h2>Quick Actions</h2></div>
-        <div class="quick-grid">
-          <button class="quick glass-soft tap" onclick="location.href='monitor.html'">
-            <div class="icon">＋</div><span>Vitals</span>
-          </button>
-          <button class="quick glass-soft tap" onclick="document.getElementById('addFluid').click()">
-            <div class="icon">💧</div><span>Fluid</span>
-          </button>
-          <button class="quick glass-soft tap" onclick="showToast('Symptoms recording opened')">
-            <div class="icon">♡</div><span>Symptoms</span>
-          </button>
-        </div>
-      </section>
-
-      <section class="iman glass">
-        <small>☾ &nbsp; A peaceful moment</small>
-        <h3>Morning Zikr</h3>
-        <p>Continue your daily remembrance in a private and calming space.</p>
-        <div class="arabic">سُبْحَانَ اللَّهِ</div>
-        <div class="iman-actions">
-          <span style="font-size:12px;color:#B9EFD7;font-weight:700">12 / 33</span>
-          <button class="mini-btn tap" onclick="showToast('Opening Morning Zikr')">Continue →</button>
-        </div>
-      </section>
-
-      <section class="education glass-soft tap" onclick="showToast('Opening health education article')">
-        <div class="edu-art">💧</div>
+      <section class="source-note">
+        <div class="source-note__icon">i</div>
         <div>
-          <small>FOR YOU</small>
-          <h3>Managing thirst between dialysis sessions</h3>
-          <p>4 min read</p>
+          <strong>Kandungan pendidikan EDRIS</strong>
+          <p>23 skrin pendidikan disusun mengikut bahan EDRIS asal supaya kandungan dan susun atur pembelajaran kekal konsisten.</p>
         </div>
-        <div class="arrow">→</div>
       </section>
-    </section>
-  </main>
+    </main>
 
-  <nav class="bottom-nav" aria-label="Primary navigation">
-    <a class="nav-item active tap" href="index.html" style="text-decoration:none"><span class="i">⌂</span><span>Home</span></a>
-    <a class="nav-item tap" href="monitor.html" style="text-decoration:none"><span class="i">♡</span><span>Monitor</span></a>
-    <button class="nav-item tap" data-label="Learn"><span class="i">▤</span><span>Learn</span></button>
-    <button class="nav-item tap" data-label="Iman"><span class="i">☾</span><span>Iman</span></button>
-    <button class="nav-item tap" data-label="Me"><span class="i">◯</span><span>Me</span></button>
-  </nav>
+    <main id="topicsView" class="view is-hidden">
+      <section class="simple-page-heading">
+        <span>SEMUA TOPIK</span>
+        <h1>Health Education</h1>
+        <p>Pilih topik untuk membaca bahan pendidikan.</p>
+      </section>
+      <div id="topicsGrid" class="topics-grid"></div>
+    </main>
 
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <main id="savedView" class="view is-hidden">
+      <section class="simple-page-heading">
+        <span>DISIMPAN</span>
+        <h1>Saved topics</h1>
+        <p>Topik yang anda tandakan akan muncul di sini.</p>
+      </section>
+      <div id="savedList" class="saved-list"></div>
+      <div id="savedEmpty" class="empty-state">
+        <div class="empty-state__icon">♡</div>
+        <strong>Belum ada topik disimpan</strong>
+        <p>Tekan ikon simpan semasa membaca topik.</p>
+      </div>
+    </main>
+
+    <main id="aboutView" class="view is-hidden">
+      <section class="about-card">
+        <div class="about-card__logo"><img src="assets/brand/edris-logo-white.png" alt="EDRIS"></div>
+        <div class="about-card__content">
+          <span>HEALTH EDUCATION</span>
+          <h1>EDRIS Education</h1>
+          <p>A focused education experience built from the supplied EDRIS learning material, using the EDRIS brand identity.</p>
+          <div class="brand-swatches">
+            <i style="--swatch:#1469E2" title="#1469E2"></i>
+            <i style="--swatch:#262B6A" title="#262B6A"></i>
+            <i style="--swatch:#000000" title="#000000"></i>
+            <i style="--swatch:#FFFFFF" title="#FFFFFF"></i>
+          </div>
+          <div class="brand-spec">
+            <div><span>Typography</span><strong>Oxygen</strong></div>
+            <div><span>Primary</span><strong>#1469E2</strong></div>
+            <div><span>Secondary</span><strong>#262B6A</strong></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <main id="readerView" class="reader-view is-hidden">
+      <section class="reader-toolbar">
+        <div class="reader-toolbar__text">
+          <span id="readerCategoryEn">Education</span>
+          <h1 id="readerTitle">Topic</h1>
+        </div>
+        <button id="saveTopicButton" class="save-button" aria-label="Simpan topik">
+          <span id="saveIcon">♡</span>
+        </button>
+      </section>
+
+      <section class="reader-progress">
+        <div><span id="readerProgressBar"></span></div>
+        <p><strong id="readerCurrent">1</strong> / <span id="readerTotal">1</span></p>
+      </section>
+
+      <section id="pageStage" class="page-stage">
+        <button id="zoomButton" class="education-page" aria-label="Besarkan halaman">
+          <img id="readerImage" src="" alt="">
+        </button>
+      </section>
+
+      <section class="reader-controls">
+        <button id="previousPage" class="reader-control">← <span>Sebelum</span></button>
+        <button id="nextPage" class="reader-control reader-control--primary"><span>Seterusnya</span> →</button>
+      </section>
+    </main>
+
+    <nav id="bottomNav" class="bottom-nav" aria-label="Navigasi utama">
+      <a href="#home" class="nav-item active" data-view="home">
+        <span class="nav-icon">⌂</span><span>Home</span>
+      </a>
+      <a href="#topics" class="nav-item" data-view="topics">
+        <span class="nav-icon">▤</span><span>Topics</span>
+      </a>
+      <a href="#saved" class="nav-item" data-view="saved">
+        <span class="nav-icon">♡</span><span>Saved</span>
+      </a>
+      <a href="#about" class="nav-item" data-view="about">
+        <span class="nav-icon">ⓘ</span><span>About</span>
+      </a>
+    </nav>
+
+    <div id="zoomOverlay" class="zoom-overlay is-hidden" role="dialog" aria-modal="true">
+      <button id="closeZoom" class="zoom-overlay__close" aria-label="Tutup">×</button>
+      <div class="zoom-overlay__scroll">
+        <img id="zoomImage" alt="">
+      </div>
+    </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  </div>
   <script src="assets/js/app.js"></script>
 </body>
 </html>

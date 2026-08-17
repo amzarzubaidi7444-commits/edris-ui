@@ -1,92 +1,53 @@
-# EDRIS UI Prototype
+# EDRIS Health Education
 
-Modern glassmorphism + gradient patient dashboard prototype for the EDRIS dialysis care app.
+Fresh reset of the EDRIS web prototype focused only on health education.
 
-## Included
+## What this version contains
 
-- Responsive mobile patient home dashboard
-- EDRIS blue/navy visual identity
-- Glassmorphism cards and navigation
-- Gradient dialysis hero
-- Blood pressure and weight summary cards
-- Interactive fluid tracker
-- Quick actions
-- Iman / Morning Zikr card
-- Health education card
-- Light glass mode toggle
+- EDRIS brand identity (`#1469E2`, `#262B6A`, black, white)
+- Oxygen UI typography
+- Education-only home experience
+- Six education categories from the supplied PDF
+- All 23 supplied education screens preserved as exact rendered pages
+- Topic reader with previous/next navigation
+- Saved topics using browser local storage
+- Search
+- Full-page zoom
+- Mobile swipe navigation
+- GitHub Pages compatible
+
+## Education sections
+
+1. Kerohanian / Spiritual - PDF pages 2-6
+2. Merokok / Smoking - PDF pages 7-8
+3. Aktiviti Fizikal & Senaman - PDF pages 9-14
+4. Penyakit Buah Pinggang Kronik - PDF pages 15-17
+5. Rawatan Dialisis - PDF pages 18-20
+6. Tips Pemakanan Pesakit Dialisis - PDF pages 21-23
 
 ## Run locally
 
-This is a static HTML/CSS/JavaScript project.
+Open `index.html`, or use:
 
-### Option 1: Open directly
-
-Open `index.html` in your browser.
-
-### Option 2: Run a local server
-
-With Python:
-
-```bash
+```powershell
 python -m http.server 8080
 ```
 
-Then visit:
+Then visit `http://localhost:8080`.
 
-```text
-http://localhost:8080
-```
+## GitHub Pages
 
-## Project structure
+This is a static website and works with the GitHub Pages workflow already used in your repository.
 
-```text
-edris-ui/
-├── index.html
-├── assets/
-│   ├── css/
-│   │   └── styles.css
-│   └── js/
-│       └── app.js
-├── .gitignore
-└── README.md
-```
+## Brand identity
 
-## Recommended next screens
+This update applies the supplied EDRIS identity consistently across the education app shell:
 
-- Monitoring dashboard
-- Dialysis details
-- Medication adherence
-- Health education library
-- Iman / Zikr experience
-- Caregiver dashboard
-- Clinician overview
+- Primary: `#1469E2`
+- Secondary: `#262B6A`
+- Black: `#000000`
+- White: `#FFFFFF`
+- Typography: Oxygen
+- Logo and app icon derived from the supplied EDRIS brand board
 
-## Design notes
-
-Primary EDRIS colors:
-
-- Blue: `#1469E2`
-- Navy: `#262B6A`
-
-The prototype uses Oxygen for the Latin UI and can be extended with Noto Sans Arabic for Arabic content.
-
-
-## Publish on GitHub Pages
-
-This repository already includes `.github/workflows/pages.yml`.
-
-1. Create a new GitHub repository.
-2. Push this repository to GitHub using the `main` branch.
-3. Open **Settings → Pages**.
-4. Under **Build and deployment → Source**, choose **GitHub Actions**.
-5. Push to `main` or manually run the Pages workflow.
-6. GitHub will display the public site URL after the deployment succeeds.
-
-Example push commands:
-
-```bash
-git remote add origin https://github.com/YOUR-USERNAME/edris-ui.git
-git push -u origin main
-```
-
-> This prototype contains demo/sample patient information only. Do not publish real patient or clinical data in a public static site.
+The 23 education-page images remain unchanged so the educational layouts and information stay faithful to the supplied PDF.

@@ -1,0 +1,55 @@
+EDRIS EDUCATION - FULL RESET UPDATE
+
+This package intentionally replaces the previous monitoring/dialysis prototype.
+It is focused ONLY on the health-education UI supplied in:
+
+UI UX Education Edris.pdf
+
+IMPORTANT
+Keep these existing Git/GitHub folders in your local repository:
+- .git
+- .github
+
+REMOVE the previous website files/folders from your local edris-ui folder:
+- index.html
+- monitor.html
+- dialysis.html
+- assets
+- manifest.webmanifest (if it exists)
+- sw.js (if it exists)
+
+Then copy ALL files from this package into:
+
+C:\Users\amzar\Downloads\edris-ui
+
+Your project should look like:
+
+edris-ui/
+├── .git/
+├── .github/
+├── index.html
+├── manifest.webmanifest
+├── README.md
+├── .nojekyll
+└── assets/
+    ├── brand/
+    ├── covers/
+    ├── css/
+    ├── js/
+    └── pages/
+
+Then run:
+
+git status
+git add -A
+git commit -m "Reset app to EDRIS health education"
+git push origin main
+
+GitHub Actions should deploy the new education-only app automatically.
+
+LIVE URL:
+https://amzarzubaidi7444-commits.github.io/edris-ui/
+
+NOTE:
+Because this is a complete reset, `git add -A` is important. It records both
+the NEW education files and deletion of the old monitoring/dialysis files.

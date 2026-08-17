@@ -1,0 +1,34 @@
+EDRIS EDUCATION - BRAND IDENTITY FULL UPDATE
+
+This is the new education-only version using the supplied EDRIS brand identity.
+
+BRAND
+Primary Blue: #1469E2
+Secondary Navy: #262B6A
+Black: #000000
+White: #FFFFFF
+Typography: Oxygen
+
+The 23 education page images are unchanged from the supplied EDRIS UI/UX PDF.
+
+REPLACE YOUR CURRENT PROJECT
+
+1. In:
+   C:\Users\amzar\Downloads\edris-ui
+
+2. KEEP:
+   .git
+   .github
+
+3. Replace the rest of the site files with the contents of this ZIP.
+
+4. In PowerShell inside edris-ui run:
+
+   git status
+   git add -A
+   git commit -m "Apply EDRIS brand identity to education app"
+   git push origin main
+
+5. Wait for GitHub Actions to turn green.
+
+Your existing GitHub Pages URL will update automatically.
