@@ -1,4 +1,4 @@
-const CACHE = 'edris-education-v1-1';
+const CACHE = 'edris-education-v1-2';
 const ASSETS = [
   "./",
   "./index.html",

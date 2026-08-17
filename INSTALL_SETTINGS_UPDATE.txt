@@ -1,0 +1,93 @@
+EDRIS SETTINGS FUNCTIONAL UPDATE v1.2
+====================================
+
+USE THIS AS A FULL WEBSITE REPLACEMENT.
+
+A. GO TO YOUR LOCAL REPOSITORY
+
+C:\Users\amzar\Downloads\edris-ui
+
+
+B. VERY IMPORTANT — FIRST GET THE LATEST GITHUB VERSION
+
+Open PowerShell inside the edris-ui folder and run:
+
+git pull origin main
+
+
+C. KEEP THESE TWO FOLDERS
+
+.git
+.github
+
+
+D. REPLACE THE WEBSITE FILES
+
+Extract this ZIP.
+
+Copy ALL files and folders from this ZIP into:
+
+C:\Users\amzar\Downloads\edris-ui
+
+Choose "Replace the files in the destination" if Windows asks.
+
+
+E. CHECK THE PROJECT
+
+Run:
+
+git status
+
+You should see modified files such as:
+index.html
+assets/css/app.css
+assets/js/app.js
+sw.js
+SETTINGS_GUIDE.md
+
+
+F. COMMIT
+
+git add -A
+
+git commit -m "Make EDRIS settings fully functional"
+
+
+G. PUSH
+
+git push origin main
+
+
+H. WAIT FOR GITHUB ACTIONS
+
+GitHub:
+Repository → Actions
+
+Wait until the latest workflow shows a GREEN checkmark.
+
+
+I. REFRESH
+
+Desktop:
+Ctrl + F5
+
+Mobile:
+Close the browser tab/app and reopen it.
+If an old installed PWA is still cached, reload the website once while online.
+
+
+J. TEST
+
+Open:
+More → Settings
+
+Test:
+Language
+Text size
+Dark mode
+Reset reading progress
+Clear saved lessons
+Restore reading preferences
+Install EDRIS
+
+See SETTINGS_GUIDE.md for the exact test checklist.
